@@ -16,8 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This is the top text field" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5T-5T-VKh" userLabel="Top Text Field">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This is the top text field" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cOM-zN-T9a" userLabel="Top Text Field">
                                 <rect key="frame" x="10" y="84" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This is the top text field" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5T-5T-VKh" userLabel="Bottom Text Field">
+                                <rect key="frame" x="10" y="758" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -50,20 +55,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OY4-30-dsi" firstAttribute="bottom" secondItem="l0u-Hb-3mT" secondAttribute="bottom" id="186-ri-E0n"/>
+                            <constraint firstItem="cOM-zN-T9a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="1O6-3O-cVD"/>
                             <constraint firstItem="l0u-Hb-3mT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3xP-3S-bs4"/>
-                            <constraint firstItem="F5T-5T-VKh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="9pW-bQ-TS1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F5T-5T-VKh" secondAttribute="trailing" constant="10" id="FCN-Vm-q77"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F5T-5T-VKh" secondAttribute="bottom" constant="70" id="NQ7-eD-6tI"/>
+                            <constraint firstItem="cOM-zN-T9a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ORk-xc-kIy"/>
                             <constraint firstItem="OY4-30-dsi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ww8-zF-axR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OY4-30-dsi" secondAttribute="bottom" id="cSy-mc-5dt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OY4-30-dsi" secondAttribute="trailing" id="gHN-Rc-etc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cOM-zN-T9a" secondAttribute="trailing" constant="10" id="laK-qJ-LK6"/>
                             <constraint firstItem="l0u-Hb-3mT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nIq-Hr-qfa"/>
                             <constraint firstItem="F5T-5T-VKh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="p8B-kf-Ey7"/>
                             <constraint firstItem="l0u-Hb-3mT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xWf-g6-Ghb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="F5T-5T-VKh" id="RC2-Jt-pdy"/>
                         <outlet property="cameraButton" destination="6S7-xb-ItB" id="DMW-wO-gVT"/>
                         <outlet property="imagePickerView" destination="JJT-iB-9fc" id="6R1-l0-Kx6"/>
+                        <outlet property="topTextField" destination="cOM-zN-T9a" id="hGv-4T-OT8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
