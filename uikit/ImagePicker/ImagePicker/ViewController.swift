@@ -86,12 +86,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @objc func keyboardWillShow(_ notification:Notification) {
 
         if bottomTextField.isEditing {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            print("Changing height!")
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
 
     @objc func keyboardWillHide(_ notification:Notification) {
 
+        print("Reverting height!")
         view.frame.origin.y = 0
     }
 
@@ -99,6 +101,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
+    }
+
+    // TODO: Create an action for this
+    func generateMemedImage() -> UIImage {
+
+        // TODO: Hide toolbar and navbar
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        // TODO: Show toolbar and navbar
+
+        return memedImage
     }
 }
 
