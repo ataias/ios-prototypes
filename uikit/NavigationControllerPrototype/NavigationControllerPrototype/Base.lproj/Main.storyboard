@@ -49,6 +49,9 @@
                                             <constraint firstAttribute="height" constant="20" id="tT6-fX-BOG"/>
                                         </constraints>
                                         <state key="normal" title="Action 1"/>
+                                        <connections>
+                                            <segue destination="UWf-Ph-jpe" kind="show" id="fl2-vO-GyJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkl-gl-f4g">
                                         <rect key="frame" x="0.0" y="734" width="394" height="20"/>
@@ -56,6 +59,9 @@
                                             <constraint firstAttribute="height" constant="20" id="Hm6-kS-tK5"/>
                                         </constraints>
                                         <state key="normal" title="Action 2"/>
+                                        <connections>
+                                            <segue destination="yMI-hJ-2s9" kind="show" id="Y9y-CZ-Fe5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -74,6 +80,108 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrq-LS-dX5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="430.43478260869568" y="116.51785714285714"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Hxq-Wc-0GH">
+            <objects>
+                <viewController id="UWf-Ph-jpe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="siO-EF-yLu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RbD-0r-zQu">
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="gE5-eR-eLm">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="714"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   IUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtU-2i-RNl" userLabel="Action 1">
+                                        <rect key="frame" x="0.0" y="714" width="394" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="S6n-0T-2oA"/>
+                                        </constraints>
+                                        <state key="normal" title="Action 1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kL-Xg-4Ak">
+                                        <rect key="frame" x="0.0" y="734" width="394" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="dXe-Gy-NDc"/>
+                                        </constraints>
+                                        <state key="normal" title="Action 2"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xzN-wl-qgl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RbD-0r-zQu" firstAttribute="leading" secondItem="xzN-wl-qgl" secondAttribute="leading" constant="10" id="jQp-9n-8nN"/>
+                            <constraint firstItem="RbD-0r-zQu" firstAttribute="trailing" secondItem="xzN-wl-qgl" secondAttribute="trailing" constant="-10" id="ohQ-JC-whz"/>
+                            <constraint firstItem="RbD-0r-zQu" firstAttribute="top" secondItem="xzN-wl-qgl" secondAttribute="top" constant="10" id="uyc-gq-RTX"/>
+                            <constraint firstItem="RbD-0r-zQu" firstAttribute="bottom" secondItem="xzN-wl-qgl" secondAttribute="bottom" constant="-10" id="yU4-w8-cIc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PWq-do-xqX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIn-Ex-VJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="842"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QqX-cj-rqm">
+            <objects>
+                <viewController id="yMI-hJ-2s9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7es-xd-XN4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zLG-Pe-8bV">
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="o9V-6k-9jj">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="714"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   IUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R45-Tz-UQ9" userLabel="Action 1">
+                                        <rect key="frame" x="0.0" y="714" width="394" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="rKr-fm-CP7"/>
+                                        </constraints>
+                                        <state key="normal" title="Action 1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDp-Mp-wc7">
+                                        <rect key="frame" x="0.0" y="734" width="394" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="oAN-IF-tBV"/>
+                                        </constraints>
+                                        <state key="normal" title="Action 2"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2aW-fI-VZc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zLG-Pe-8bV" firstAttribute="top" secondItem="2aW-fI-VZc" secondAttribute="top" constant="10" id="I3T-D4-WW7"/>
+                            <constraint firstItem="zLG-Pe-8bV" firstAttribute="bottom" secondItem="2aW-fI-VZc" secondAttribute="bottom" constant="-10" id="oKf-nx-inb"/>
+                            <constraint firstItem="zLG-Pe-8bV" firstAttribute="trailing" secondItem="2aW-fI-VZc" secondAttribute="trailing" constant="-10" id="wRj-sZ-bIg"/>
+                            <constraint firstItem="zLG-Pe-8bV" firstAttribute="leading" secondItem="2aW-fI-VZc" secondAttribute="leading" constant="10" id="xEU-fd-Wfm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7bB-1L-c6Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqR-tZ-qdf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="842"/>
         </scene>
     </scenes>
     <resources>
