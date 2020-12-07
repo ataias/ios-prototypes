@@ -17,6 +17,8 @@
 		42B1BA97257E407400D5A342 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1BA95257E407400D5A342 /* ChatScreen.swift */; };
 		42B1BA9B257E416D00D5A342 /* ChatScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1BA9A257E416D00D5A342 /* ChatScreenModel.swift */; };
 		42B1BA9C257E416D00D5A342 /* ChatScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1BA9A257E416D00D5A342 /* ChatScreenModel.swift */; };
+		42B1BAA0257E481000D5A342 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1BA9F257E481000D5A342 /* Models.swift */; };
+		42B1BAA1257E481000D5A342 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1BA9F257E481000D5A342 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		42B1BA84257E405200D5A342 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		42B1BA95257E407400D5A342 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
 		42B1BA9A257E416D00D5A342 /* ChatScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenModel.swift; sourceTree = "<group>"; };
+		42B1BA9F257E481000D5A342 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,7 @@
 				42B1BA72257E405100D5A342 /* SwiftChatApp.swift */,
 				42B1BA73257E405100D5A342 /* ContentView.swift */,
 				42B1BA9A257E416D00D5A342 /* ChatScreenModel.swift */,
+				42B1BA9F257E481000D5A342 /* Models.swift */,
 				42B1BA95257E407400D5A342 /* ChatScreen.swift */,
 				42B1BA74257E405200D5A342 /* Assets.xcassets */,
 			);
@@ -199,6 +203,7 @@
 				42B1BA9B257E416D00D5A342 /* ChatScreenModel.swift in Sources */,
 				42B1BA96257E407400D5A342 /* ChatScreen.swift in Sources */,
 				42B1BA85257E405200D5A342 /* SwiftChatApp.swift in Sources */,
+				42B1BAA0257E481000D5A342 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +215,7 @@
 				42B1BA9C257E416D00D5A342 /* ChatScreenModel.swift in Sources */,
 				42B1BA97257E407400D5A342 /* ChatScreen.swift in Sources */,
 				42B1BA86257E405200D5A342 /* SwiftChatApp.swift in Sources */,
+				42B1BAA1257E481000D5A342 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
