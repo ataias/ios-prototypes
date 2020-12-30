@@ -12,6 +12,8 @@ struct ContentView: View {
     private let strings: [String] = [
         "I love cheese",
         "Hacking with Swift is awesome. I learn lots of stuff there.",
+        "Hacking with Swift is awesome",
+        "It sucks to be a sucker",
     ]
 
     var body: some View {
