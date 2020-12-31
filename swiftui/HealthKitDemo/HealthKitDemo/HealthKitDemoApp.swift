@@ -9,9 +9,30 @@ import SwiftUI
 
 @main
 struct HealthKitDemoApp: App {
+    @ObservedObject var model = Health()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(age: model.age) 
+                .onAppear(perform: authorizeHealthkit)
+        }
+    }
+
+    func authorizeHealthkit() {
+        HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
+
+            guard authorized else {
+                let baseMessage = "HealthKit Authorization Failed"
+
+                if let error = error {
+                    print("\(baseMessage). Reason: \(error.localizedDescription)")
+                } else {
+                    print(baseMessage)
+                }
+
+                return
+            }
+
+            print("HealthKit Successfully Authorized.")
         }
     }
 }

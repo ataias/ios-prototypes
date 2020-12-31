@@ -13,6 +13,10 @@
 		42805BF4259E564B0080E19F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42805BF3259E564B0080E19F /* Preview Assets.xcassets */; };
 		42805BFF259E56560080E19F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42805BFE259E56560080E19F /* HealthKit.framework */; };
 		42805C02259E57A00080E19F /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805C01259E57A00080E19F /* HealthKitSetupAssistant.swift */; };
+		42805C08259E5B170080E19F /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805C07259E5B170080E19F /* Health.swift */; };
+		42805C0C259E5C210080E19F /* HKBiologicalSex+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805C0B259E5C210080E19F /* HKBiologicalSex+Extensions.swift */; };
+		42805C10259E60980080E19F /* HKBloodType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805C0F259E60980080E19F /* HKBloodType+Extensions.swift */; };
+		42A9D5A3259E63AC00AA4CCE /* DataRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A9D5A2259E63AC00AA4CCE /* DataRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		42805BFC259E56560080E19F /* HealthKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitDemo.entitlements; sourceTree = "<group>"; };
 		42805BFE259E56560080E19F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		42805C01259E57A00080E19F /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		42805C07259E5B170080E19F /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		42805C0B259E5C210080E19F /* HKBiologicalSex+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBiologicalSex+Extensions.swift"; sourceTree = "<group>"; };
+		42805C0F259E60980080E19F /* HKBloodType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBloodType+Extensions.swift"; sourceTree = "<group>"; };
+		42A9D5A2259E63AC00AA4CCE /* DataRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +67,12 @@
 		42805BEB259E56480080E19F /* HealthKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				42805C0A259E5C0F0080E19F /* HealthKitExtensions */,
 				42805C00259E578A0080E19F /* Model */,
 				42805BFC259E56560080E19F /* HealthKitDemo.entitlements */,
 				42805BEC259E56480080E19F /* HealthKitDemoApp.swift */,
 				42805BEE259E56480080E19F /* ContentView.swift */,
+				42A9D5A2259E63AC00AA4CCE /* DataRowView.swift */,
 				42805BF0259E564B0080E19F /* Assets.xcassets */,
 				42805BF5259E564B0080E19F /* Info.plist */,
 				42805BF2259E564B0080E19F /* Preview Content */,
@@ -90,8 +100,18 @@
 			isa = PBXGroup;
 			children = (
 				42805C01259E57A00080E19F /* HealthKitSetupAssistant.swift */,
+				42805C07259E5B170080E19F /* Health.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		42805C0A259E5C0F0080E19F /* HealthKitExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				42805C0B259E5C210080E19F /* HKBiologicalSex+Extensions.swift */,
+				42805C0F259E60980080E19F /* HKBloodType+Extensions.swift */,
+			);
+			path = HealthKitExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,8 +184,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				42805BEF259E56480080E19F /* ContentView.swift in Sources */,
+				42805C08259E5B170080E19F /* Health.swift in Sources */,
 				42805BED259E56480080E19F /* HealthKitDemoApp.swift in Sources */,
+				42805C0C259E5C210080E19F /* HKBiologicalSex+Extensions.swift in Sources */,
 				42805C02259E57A00080E19F /* HealthKitSetupAssistant.swift in Sources */,
+				42805C10259E60980080E19F /* HKBloodType+Extensions.swift in Sources */,
+				42A9D5A3259E63AC00AA4CCE /* DataRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
