@@ -7,114 +7,128 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42A9EA0E259C8CAE00FC8BA9 /* NSUserActivityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA0D259C8CAE00FC8BA9 /* NSUserActivityApp.swift */; };
-		42A9EA10259C8CAE00FC8BA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA0F259C8CAE00FC8BA9 /* ContentView.swift */; };
-		42A9EA12259C8CB000FC8BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A9EA11259C8CB000FC8BA9 /* Assets.xcassets */; };
-		42A9EA15259C8CB000FC8BA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A9EA14259C8CB000FC8BA9 /* Preview Assets.xcassets */; };
-		42A9EA1E259C8E0400FC8BA9 /* SiriUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA1D259C8E0400FC8BA9 /* SiriUIViewController.swift */; };
-		42A9EA21259C95C200FC8BA9 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA20259C95C200FC8BA9 /* Intents.intentdefinition */; };
-		42A9EA26259C991900FC8BA9 /* LogIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A9EA25259C991900FC8BA9 /* LogIntentHandler.swift */; };
+		42805BED259E56480080E19F /* HealthKitDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805BEC259E56480080E19F /* HealthKitDemoApp.swift */; };
+		42805BEF259E56480080E19F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805BEE259E56480080E19F /* ContentView.swift */; };
+		42805BF1259E564B0080E19F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42805BF0259E564B0080E19F /* Assets.xcassets */; };
+		42805BF4259E564B0080E19F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42805BF3259E564B0080E19F /* Preview Assets.xcassets */; };
+		42805BFF259E56560080E19F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42805BFE259E56560080E19F /* HealthKit.framework */; };
+		42805C02259E57A00080E19F /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805C01259E57A00080E19F /* HealthKitSetupAssistant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		42A9EA0A259C8CAE00FC8BA9 /* NSUserActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSUserActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		42A9EA0D259C8CAE00FC8BA9 /* NSUserActivityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUserActivityApp.swift; sourceTree = "<group>"; };
-		42A9EA0F259C8CAE00FC8BA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		42A9EA11259C8CB000FC8BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42A9EA14259C8CB000FC8BA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		42A9EA16259C8CB000FC8BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42A9EA1D259C8E0400FC8BA9 /* SiriUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriUIViewController.swift; sourceTree = "<group>"; };
-		42A9EA20259C95C200FC8BA9 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
-		42A9EA25259C991900FC8BA9 /* LogIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIntentHandler.swift; sourceTree = "<group>"; };
-		42A9EA2E259C9D1600FC8BA9 /* NSUserActivity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NSUserActivity.entitlements; sourceTree = "<group>"; };
+		42805BE9259E56480080E19F /* HealthKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42805BEC259E56480080E19F /* HealthKitDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitDemoApp.swift; sourceTree = "<group>"; };
+		42805BEE259E56480080E19F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		42805BF0259E564B0080E19F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42805BF3259E564B0080E19F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		42805BF5259E564B0080E19F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42805BFC259E56560080E19F /* HealthKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitDemo.entitlements; sourceTree = "<group>"; };
+		42805BFE259E56560080E19F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		42805C01259E57A00080E19F /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		42A9EA07259C8CAE00FC8BA9 /* Frameworks */ = {
+		42805BE6259E56480080E19F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42805BFF259E56560080E19F /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		42A9EA01259C8CAE00FC8BA9 = {
+		42805BE0259E56480080E19F = {
 			isa = PBXGroup;
 			children = (
-				42A9EA0C259C8CAE00FC8BA9 /* NSUserActivity */,
-				42A9EA0B259C8CAE00FC8BA9 /* Products */,
+				42805BEB259E56480080E19F /* HealthKitDemo */,
+				42805BEA259E56480080E19F /* Products */,
+				42805BFD259E56560080E19F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		42A9EA0B259C8CAE00FC8BA9 /* Products */ = {
+		42805BEA259E56480080E19F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42A9EA0A259C8CAE00FC8BA9 /* NSUserActivity.app */,
+				42805BE9259E56480080E19F /* HealthKitDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		42A9EA0C259C8CAE00FC8BA9 /* NSUserActivity */ = {
+		42805BEB259E56480080E19F /* HealthKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				42A9EA2E259C9D1600FC8BA9 /* NSUserActivity.entitlements */,
-				42A9EA0D259C8CAE00FC8BA9 /* NSUserActivityApp.swift */,
-				42A9EA0F259C8CAE00FC8BA9 /* ContentView.swift */,
-				42A9EA20259C95C200FC8BA9 /* Intents.intentdefinition */,
-				42A9EA1D259C8E0400FC8BA9 /* SiriUIViewController.swift */,
-				42A9EA25259C991900FC8BA9 /* LogIntentHandler.swift */,
-				42A9EA11259C8CB000FC8BA9 /* Assets.xcassets */,
-				42A9EA16259C8CB000FC8BA9 /* Info.plist */,
-				42A9EA13259C8CB000FC8BA9 /* Preview Content */,
+				42805C00259E578A0080E19F /* Model */,
+				42805BFC259E56560080E19F /* HealthKitDemo.entitlements */,
+				42805BEC259E56480080E19F /* HealthKitDemoApp.swift */,
+				42805BEE259E56480080E19F /* ContentView.swift */,
+				42805BF0259E564B0080E19F /* Assets.xcassets */,
+				42805BF5259E564B0080E19F /* Info.plist */,
+				42805BF2259E564B0080E19F /* Preview Content */,
 			);
-			path = NSUserActivity;
+			path = HealthKitDemo;
 			sourceTree = "<group>";
 		};
-		42A9EA13259C8CB000FC8BA9 /* Preview Content */ = {
+		42805BF2259E564B0080E19F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				42A9EA14259C8CB000FC8BA9 /* Preview Assets.xcassets */,
+				42805BF3259E564B0080E19F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		42805BFD259E56560080E19F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42805BFE259E56560080E19F /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42805C00259E578A0080E19F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42805C01259E57A00080E19F /* HealthKitSetupAssistant.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42A9EA09259C8CAE00FC8BA9 /* NSUserActivity */ = {
+		42805BE8259E56480080E19F /* HealthKitDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42A9EA19259C8CB000FC8BA9 /* Build configuration list for PBXNativeTarget "NSUserActivity" */;
+			buildConfigurationList = 42805BF8259E564B0080E19F /* Build configuration list for PBXNativeTarget "HealthKitDemo" */;
 			buildPhases = (
-				42A9EA06259C8CAE00FC8BA9 /* Sources */,
-				42A9EA07259C8CAE00FC8BA9 /* Frameworks */,
-				42A9EA08259C8CAE00FC8BA9 /* Resources */,
+				42805BE5259E56480080E19F /* Sources */,
+				42805BE6259E56480080E19F /* Frameworks */,
+				42805BE7259E56480080E19F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = NSUserActivity;
-			productName = NSUserActivity;
-			productReference = 42A9EA0A259C8CAE00FC8BA9 /* NSUserActivity.app */;
+			name = HealthKitDemo;
+			productName = HealthKitDemo;
+			productReference = 42805BE9259E56480080E19F /* HealthKitDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		42A9EA02259C8CAE00FC8BA9 /* Project object */ = {
+		42805BE1259E56480080E19F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
-					42A9EA09259C8CAE00FC8BA9 = {
+					42805BE8259E56480080E19F = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
 			};
-			buildConfigurationList = 42A9EA05259C8CAE00FC8BA9 /* Build configuration list for PBXProject "NSUserActivity" */;
+			buildConfigurationList = 42805BE4259E56480080E19F /* Build configuration list for PBXProject "HealthKitDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -122,45 +136,43 @@
 				en,
 				Base,
 			);
-			mainGroup = 42A9EA01259C8CAE00FC8BA9;
-			productRefGroup = 42A9EA0B259C8CAE00FC8BA9 /* Products */;
+			mainGroup = 42805BE0259E56480080E19F;
+			productRefGroup = 42805BEA259E56480080E19F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42A9EA09259C8CAE00FC8BA9 /* NSUserActivity */,
+				42805BE8259E56480080E19F /* HealthKitDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		42A9EA08259C8CAE00FC8BA9 /* Resources */ = {
+		42805BE7259E56480080E19F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A9EA15259C8CB000FC8BA9 /* Preview Assets.xcassets in Resources */,
-				42A9EA12259C8CB000FC8BA9 /* Assets.xcassets in Resources */,
+				42805BF4259E564B0080E19F /* Preview Assets.xcassets in Resources */,
+				42805BF1259E564B0080E19F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		42A9EA06259C8CAE00FC8BA9 /* Sources */ = {
+		42805BE5259E56480080E19F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A9EA1E259C8E0400FC8BA9 /* SiriUIViewController.swift in Sources */,
-				42A9EA26259C991900FC8BA9 /* LogIntentHandler.swift in Sources */,
-				42A9EA10259C8CAE00FC8BA9 /* ContentView.swift in Sources */,
-				42A9EA21259C95C200FC8BA9 /* Intents.intentdefinition in Sources */,
-				42A9EA0E259C8CAE00FC8BA9 /* NSUserActivityApp.swift in Sources */,
+				42805BEF259E56480080E19F /* ContentView.swift in Sources */,
+				42805BED259E56480080E19F /* HealthKitDemoApp.swift in Sources */,
+				42805C02259E57A00080E19F /* HealthKitSetupAssistant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		42A9EA17259C8CB000FC8BA9 /* Debug */ = {
+		42805BF6259E564B0080E19F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -221,7 +233,7 @@
 			};
 			name = Debug;
 		};
-		42A9EA18259C8CB000FC8BA9 /* Release */ = {
+		42805BF7259E564B0080E19F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -276,46 +288,46 @@
 			};
 			name = Release;
 		};
-		42A9EA1A259C8CB000FC8BA9 /* Debug */ = {
+		42805BF9259E564B0080E19F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NSUserActivity/NSUserActivity.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/HealthKitDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"NSUserActivity/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HealthKitDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 8XPT9US388;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = NSUserActivity/Info.plist;
+				INFOPLIST_FILE = HealthKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.NSUserActivity;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.HealthKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		42A9EA1B259C8CB000FC8BA9 /* Release */ = {
+		42805BFA259E564B0080E19F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NSUserActivity/NSUserActivity.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/HealthKitDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"NSUserActivity/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HealthKitDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 8XPT9US388;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = NSUserActivity/Info.plist;
+				INFOPLIST_FILE = HealthKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.NSUserActivity;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.HealthKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -325,25 +337,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42A9EA05259C8CAE00FC8BA9 /* Build configuration list for PBXProject "NSUserActivity" */ = {
+		42805BE4259E56480080E19F /* Build configuration list for PBXProject "HealthKitDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42A9EA17259C8CB000FC8BA9 /* Debug */,
-				42A9EA18259C8CB000FC8BA9 /* Release */,
+				42805BF6259E564B0080E19F /* Debug */,
+				42805BF7259E564B0080E19F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42A9EA19259C8CB000FC8BA9 /* Build configuration list for PBXNativeTarget "NSUserActivity" */ = {
+		42805BF8259E564B0080E19F /* Build configuration list for PBXNativeTarget "HealthKitDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42A9EA1A259C8CB000FC8BA9 /* Debug */,
-				42A9EA1B259C8CB000FC8BA9 /* Release */,
+				42805BF9259E564B0080E19F /* Debug */,
+				42805BFA259E564B0080E19F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 42A9EA02259C8CAE00FC8BA9 /* Project object */;
+	rootObject = 42805BE1259E56480080E19F /* Project object */;
 }

@@ -4,5 +4,6 @@
         <page name='URL'/>
         <page name='URLComponents'/>
         <page name='Organization'/>
+        <page name='SessionDataTask'/>
     </pages>
 </playground>
