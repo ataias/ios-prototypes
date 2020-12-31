@@ -12,8 +12,11 @@ struct HealthKitDemoApp: App {
     @ObservedObject var model = Health()
     var body: some Scene {
         WindowGroup {
-            ContentView(age: model.age) 
-                .onAppear(perform: authorizeHealthkit)
+            ContentView(age: model.age, sex: model.biologicalSex, bloodType: model.bloodType, weight: model.weightInKilograms, height: model.heightInMeters)
+                .onAppear {
+                    authorizeHealthkit()
+                    model.readHealthInfo()
+                }
         }
     }
 
