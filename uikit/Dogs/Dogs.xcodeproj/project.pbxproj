@@ -56,15 +56,31 @@
 		42092EF5259F25D500945455 /* Dogs */ = {
 			isa = PBXGroup;
 			children = (
-				42092EF6259F25D500945455 /* AppDelegate.swift */,
-				42092EF8259F25D500945455 /* SceneDelegate.swift */,
-				42092EFA259F25D500945455 /* ViewController.swift */,
-				42092EFC259F25D500945455 /* Main.storyboard */,
-				42092EFF259F25D600945455 /* Assets.xcassets */,
-				42092F01259F25D600945455 /* LaunchScreen.storyboard */,
+				42092F0D259F266000945455 /* Controller */,
+				42092F0B259F263000945455 /* View */,
 				42092F04259F25D600945455 /* Info.plist */,
 			);
 			path = Dogs;
+			sourceTree = "<group>";
+		};
+		42092F0B259F263000945455 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42092EFC259F25D500945455 /* Main.storyboard */,
+				42092EFF259F25D600945455 /* Assets.xcassets */,
+				42092F01259F25D600945455 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42092F0D259F266000945455 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42092EF6259F25D500945455 /* AppDelegate.swift */,
+				42092EF8259F25D500945455 /* SceneDelegate.swift */,
+				42092EFA259F25D500945455 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
