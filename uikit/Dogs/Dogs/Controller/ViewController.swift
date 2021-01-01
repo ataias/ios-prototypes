@@ -17,13 +17,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = DogAPI.Endpoint.randomImageFromAllDogsCollection.url
-        let dogUrls: AnyPublisher<URL, Error> = URLSession.shared
-            .dataTaskPublisher(for: url)
+       let dogApiEndpoints = PassthroughSubject<URL, Never>()
+        let dogUrls =
+            dogApiEndpoints.flatMap { URLSession.shared.dataTaskPublisher(for: $0) }
             .map { $0.data }
             .decode(type: DogAPI.Response.self, decoder: JSONDecoder())
             .compactMap { URL(string: $0.message) }
-            .eraseToAnyPublisher()
 
         cancellable =
             dogUrls
@@ -38,6 +37,8 @@ class ViewController: UIViewController {
                     }
 
                 })
+
+        dogApiEndpoints.send(DogAPI.Endpoint.randomImageFromAllDogsCollection.url)
     }
 
 
