@@ -8,7 +8,7 @@
 import Foundation
 
 class DogAPI {
-    enum Endpoint: String {
+    enum Endpoint: String, CaseIterable {
         case randomImageFromAllDogsCollection = "https://dog.ceo/api/breeds/image/random"
 
         var url: URL {

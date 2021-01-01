@@ -19,7 +19,9 @@ class DogsTests: XCTestCase {
     }
 
     func testURLDoesNotThrow() throws {
-        XCTAssertNoThrow(DogAPI.Endpoint.randomImageFromAllDogsCollection.url)
+        for endpoint in DogAPI.Endpoint.allCases {
+            XCTAssertNoThrow(endpoint.url)
+        }
     }
 
     func testPerformanceExample() throws {
