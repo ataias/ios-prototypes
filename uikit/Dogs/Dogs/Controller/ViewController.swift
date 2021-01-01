@@ -16,7 +16,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeToDogImages()
+    }
 
+    func subscribeToDogImages() {
         cancellable =
             DogAPI.dogImagesPublisher(delayInSeconds: 1.5)
             .receive(on: DispatchQueue.main)
@@ -25,7 +28,6 @@ class ViewController: UIViewController {
                 receiveValue: { uiImage in
                     self.imageView.image = uiImage
                 })
-
     }
 
 
