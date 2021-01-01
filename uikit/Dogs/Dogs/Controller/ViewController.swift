@@ -17,7 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let dogApiEndpoints = PassthroughSubject<URL, Never>()
+        let dogApiEndpoints = Timer
+            .publish(every: 2.0, on: .main, in: .common)
+            .autoconnect()
+            .map { _ in DogAPI.Endpoint.randomImageFromAllDogsCollection.url }
+
         let dogUrls =
             dogApiEndpoints.flatMap { URLSession.shared.dataTaskPublisher(for: $0) }
             .map { $0.data }
@@ -36,8 +40,6 @@ class ViewController: UIViewController {
                     self.imageView.image = uiImage
 
                 })
-        
-        dogApiEndpoints.send(DogAPI.Endpoint.randomImageFromAllDogsCollection.url)
     }
 
 

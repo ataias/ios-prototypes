@@ -14,13 +14,14 @@ struct HealthKitDemoApp: App {
         WindowGroup {
             ContentView(age: model.age, sex: model.biologicalSex, bloodType: model.bloodType, weight: model.weightInKilograms, height: model.heightInMeters)
                 .onAppear {
-                    authorizeHealthkit()
+                    authorizeHealthkit() // TODO what if this failed? it will still call readHealthInfo afterwards. You could use combine to chain those
                     model.readHealthInfo()
                 }
         }
     }
 
     func authorizeHealthkit() {
+        // TODO use a combine future here! You can reference https://github.com/AvdLee/CombineSwiftPlayground in the future section to see how
         HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
 
             guard authorized else {
