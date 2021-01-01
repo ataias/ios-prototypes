@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class DogAPI {
     enum Endpoint: String, CaseIterable {
@@ -20,6 +21,26 @@ class DogAPI {
     struct Response: Codable {
         let message: String
         let status: String
+    }
+
+    static func dogImagesPublisher(delayInSeconds: Double) -> AnyPublisher<UIImage?, Error> {
+        let dogApiEndpoints = Timer
+            .publish(every: delayInSeconds, on: .main, in: .common)
+            .autoconnect()
+            .map { _ in DogAPI.Endpoint.randomImageFromAllDogsCollection.url }
+
+        let dogUrls =
+            dogApiEndpoints.flatMap { URLSession.shared.dataTaskPublisher(for: $0) }
+            .map { $0.data }
+            .decode(type: DogAPI.Response.self, decoder: JSONDecoder())
+            .compactMap { URL(string: $0.message) }
+
+        return
+            dogUrls
+            .flatMap { (url:URL) in URLSession.shared.dataTaskPublisher(for: url).mapError { error -> URLError in return URLError(URLError.Code(rawValue: 404)) } }
+            .map { $0.data }
+            .map { UIImage(data: $0) }
+            .eraseToAnyPublisher()
     }
 
 }
