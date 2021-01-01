@@ -8,6 +8,10 @@
 import Foundation
 import HealthKit
 
+enum AppError: Error {
+    case invalidAge
+}
+
 class Health: ObservableObject {
     @Published var age = ""
     @Published var biologicalSex = ""
@@ -17,8 +21,9 @@ class Health: ObservableObject {
 
     public func readHealthInfo() {
         do {
-            let (age, biologicalSex, bloodType) = try Self.getAgeSexAndBloodType()
-            self.age = String(age)
+            let ageResult = Self.getAge(HKHealthStore())
+            let (biologicalSex, bloodType) = try Self.getSexAndBloodType()
+            self.age = String(try ageResult.get())
             self.biologicalSex = String(describing: biologicalSex)
             self.bloodType = String(describing: bloodType)
 
@@ -29,32 +34,34 @@ class Health: ObservableObject {
         }
     }
 
-    static private func getAgeSexAndBloodType() throws -> (age: Int,
-                                                           biologicalSex: HKBiologicalSex,
-                                                           bloodType: HKBloodType) {
+    static private func getAge(_ healthKitStore: HKHealthStore) -> Result<Int,Error> {
+        let result = Result { try healthKitStore.dateOfBirthComponents() }
+        return result
+            .flatMap { birthdayComponents in
+                guard let birthday = birthdayComponents.date,
+                      let age = Calendar.current.dateComponents([.year], from: birthday, to: Date()).year else {
+                    return .failure(AppError.invalidAge)
+                }
+                return .success(age)
+            }
+    }
+
+    static private func getSexAndBloodType() throws -> (biologicalSex: HKBiologicalSex,
+                                                        bloodType: HKBloodType) {
         let healthKitStore = HKHealthStore()
 
         do {
 
             // 1. This method throws an error if these data are not available.
             // TODO: Can we use health kit with combine? This way we could get notified of changes in blood type and biological sex
-            let birthdayComponents =  try healthKitStore.dateOfBirthComponents()
             let biologicalSex =       try healthKitStore.biologicalSex()
             let bloodType =           try healthKitStore.bloodType()
-
-            // 2. Use Calendar to calculate age.
-            let today = Date()
-            let calendar = Calendar.current
-            let todayDateComponents = calendar.dateComponents([.year],
-                                                              from: today)
-            let thisYear = todayDateComponents.year!
-            let age = thisYear - birthdayComponents.year!
 
             // 3. Unwrap the wrappers to get the underlying enum values.
             let unwrappedBiologicalSex = biologicalSex.biologicalSex
             let unwrappedBloodType = bloodType.bloodType
 
-            return (age, unwrappedBiologicalSex, unwrappedBloodType)
+            return (unwrappedBiologicalSex, unwrappedBloodType)
         }
     }
 
