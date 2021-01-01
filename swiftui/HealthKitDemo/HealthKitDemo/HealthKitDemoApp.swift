@@ -22,21 +22,14 @@ struct HealthKitDemoApp: App {
 
     func authorizeHealthkit() {
         // TODO use a combine future here! You can reference https://github.com/AvdLee/CombineSwiftPlayground in the future section to see how
-        HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
-
-            guard authorized else {
+        HealthKitSetupAssistant.authorizeHealthKit { result in
+            switch result {
+            case .success(()):
+                print("HealthKit Authorization Request Successfully Processed. This does not necessarily mean the user gave you permissions though.")
+            case .failure(let error):
                 let baseMessage = "HealthKit Authorization Failed"
-
-                if let error = error {
-                    print("\(baseMessage). Reason: \(error.localizedDescription)")
-                } else {
-                    print(baseMessage)
-                }
-
-                return
+                print("\(baseMessage). Reason: \(error.localizedDescription)")
             }
-
-            print("HealthKit Successfully Authorized.")
         }
     }
 }
