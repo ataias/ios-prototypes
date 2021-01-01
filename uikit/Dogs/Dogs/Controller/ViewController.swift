@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       let dogApiEndpoints = PassthroughSubject<URL, Never>()
+        let dogApiEndpoints = PassthroughSubject<URL, Never>()
         let dogUrls =
             dogApiEndpoints.flatMap { URLSession.shared.dataTaskPublisher(for: $0) }
             .map { $0.data }
@@ -29,15 +29,14 @@ class ViewController: UIViewController {
             .flatMap { (url:URL) in URLSession.shared.dataTaskPublisher(for: url).mapError { error -> URLError in return URLError(URLError.Code(rawValue: 404)) } }
             .map { $0.data }
             .map { UIImage(data: $0 )}
+            .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { _ in print("Finished" )},
                 receiveValue: { uiImage in
-                    DispatchQueue.main.async {
-                        self.imageView.image = uiImage
-                    }
+                    self.imageView.image = uiImage
 
                 })
-
+        
         dogApiEndpoints.send(DogAPI.Endpoint.randomImageFromAllDogsCollection.url)
     }
 
