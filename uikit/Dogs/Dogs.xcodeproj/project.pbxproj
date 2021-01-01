@@ -13,7 +13,19 @@
 		42092EFE259F25D500945455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42092EFC259F25D500945455 /* Main.storyboard */; };
 		42092F00259F25D600945455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42092EFF259F25D600945455 /* Assets.xcassets */; };
 		42092F03259F25D600945455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42092F01259F25D600945455 /* LaunchScreen.storyboard */; };
+		42092F11259F279D00945455 /* DogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42092F10259F279D00945455 /* DogAPI.swift */; };
+		42092F87259F2AB800945455 /* DogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42092F86259F2AB800945455 /* DogsTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42092F89259F2AB800945455 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42092EEB259F25D500945455 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42092EF2259F25D500945455;
+			remoteInfo = Dogs;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		42092EF3259F25D500945455 /* Dogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +36,21 @@
 		42092EFF259F25D600945455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42092F02259F25D600945455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42092F04259F25D600945455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42092F10259F279D00945455 /* DogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPI.swift; sourceTree = "<group>"; };
+		42092F84259F2AB800945455 /* DogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42092F86259F2AB800945455 /* DogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsTests.swift; sourceTree = "<group>"; };
+		42092F88259F2AB800945455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		42092EF0259F25D500945455 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42092F81259F2AB800945455 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				42092EF5259F25D500945455 /* Dogs */,
+				42092F85259F2AB800945455 /* DogsTests */,
 				42092EF4259F25D500945455 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				42092EF3259F25D500945455 /* Dogs.app */,
+				42092F84259F2AB800945455 /* DogsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +81,7 @@
 		42092EF5259F25D500945455 /* Dogs */ = {
 			isa = PBXGroup;
 			children = (
+				42092F0F259F277B00945455 /* Model */,
 				42092F0D259F266000945455 /* Controller */,
 				42092F0B259F263000945455 /* View */,
 				42092F04259F25D600945455 /* Info.plist */,
@@ -83,6 +109,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		42092F0F259F277B00945455 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42092F10259F279D00945455 /* DogAPI.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42092F85259F2AB800945455 /* DogsTests */ = {
+			isa = PBXGroup;
+			children = (
+				42092F86259F2AB800945455 /* DogsTests.swift */,
+				42092F88259F2AB800945455 /* Info.plist */,
+			);
+			path = DogsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,6 +146,24 @@
 			productReference = 42092EF3259F25D500945455 /* Dogs.app */;
 			productType = "com.apple.product-type.application";
 		};
+		42092F83259F2AB800945455 /* DogsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42092F8B259F2AB800945455 /* Build configuration list for PBXNativeTarget "DogsTests" */;
+			buildPhases = (
+				42092F80259F2AB800945455 /* Sources */,
+				42092F81259F2AB800945455 /* Frameworks */,
+				42092F82259F2AB800945455 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42092F8A259F2AB800945455 /* PBXTargetDependency */,
+			);
+			name = DogsTests;
+			productName = DogsTests;
+			productReference = 42092F84259F2AB800945455 /* DogsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -114,6 +175,10 @@
 				TargetAttributes = {
 					42092EF2259F25D500945455 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					42092F83259F2AB800945455 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 42092EF2259F25D500945455;
 					};
 				};
 			};
@@ -131,6 +196,7 @@
 			projectRoot = "";
 			targets = (
 				42092EF2259F25D500945455 /* Dogs */,
+				42092F83259F2AB800945455 /* DogsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -146,6 +212,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42092F82259F2AB800945455 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -156,10 +229,27 @@
 				42092EFB259F25D500945455 /* ViewController.swift in Sources */,
 				42092EF7259F25D500945455 /* AppDelegate.swift in Sources */,
 				42092EF9259F25D500945455 /* SceneDelegate.swift in Sources */,
+				42092F11259F279D00945455 /* DogAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42092F80259F2AB800945455 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42092F87259F2AB800945455 /* DogsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42092F8A259F2AB800945455 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42092EF2259F25D500945455 /* Dogs */;
+			targetProxy = 42092F89259F2AB800945455 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		42092EFC259F25D500945455 /* Main.storyboard */ = {
@@ -335,6 +425,46 @@
 			};
 			name = Release;
 		};
+		42092F8C259F2AB800945455 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8XPT9US388;
+				INFOPLIST_FILE = DogsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.DogsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dogs.app/Dogs";
+			};
+			name = Debug;
+		};
+		42092F8D259F2AB800945455 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8XPT9US388;
+				INFOPLIST_FILE = DogsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.DogsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dogs.app/Dogs";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -352,6 +482,15 @@
 			buildConfigurations = (
 				42092F08259F25D600945455 /* Debug */,
 				42092F09259F25D600945455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42092F8B259F2AB800945455 /* Build configuration list for PBXNativeTarget "DogsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42092F8C259F2AB800945455 /* Debug */,
+				42092F8D259F2AB800945455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
