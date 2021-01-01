@@ -10,6 +10,7 @@ import HealthKit
 
 enum AppError: Error {
     case invalidAge
+    case noSamples
 }
 
 class Health: ObservableObject {
@@ -18,6 +19,7 @@ class Health: ObservableObject {
     @Published var bloodType = ""
     @Published var heightInMeters: Double?
     @Published var weightInKilograms: Double?
+    @Published var workoutSamples = [WorkoutData]()
 
     public func readHealthInfo() {
         do {
@@ -26,6 +28,7 @@ class Health: ObservableObject {
             self.biologicalSex = String(describing: try Self.getSex(store).get())
             self.bloodType = String(describing: try Self.getBloodType(store).get())
 
+            loadMostRecentWorkouts()
             loadMostRecentHeight()
             loadMostRecentWeight()
         } catch {
@@ -53,8 +56,14 @@ class Health: ObservableObject {
         return Result { try healthKitStore.bloodType().bloodType }
     }
 
-    static private func getMostRecentSample(for sampleType: HKSampleType,
-                                            completion: @escaping (Result<HKQuantitySample, Error>) -> Void) {
+    static private func getMostRecentSample<T: HKSample>(for sampleType: HKSampleType,
+                                            completion: @escaping (Result<[T], Error>) -> Void) {
+        getMostRecentSamples(for: sampleType, limit: 1, completion: completion)
+    }
+
+    static private func getMostRecentSamples<T: HKSample>(for sampleType: HKSampleType,
+                                            limit: Int,
+                                            completion: @escaping (Result<[T], Error>) -> Void) {
 
         // 1. Use HKQuery to load the most recent samples.
         let mostRecentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast,
@@ -64,8 +73,6 @@ class Health: ObservableObject {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate,
                                               ascending: false)
 
-        let limit = 1
-
         let sampleQuery = HKSampleQuery(sampleType: sampleType,
                                         predicate: mostRecentPredicate,
                                         limit: limit,
@@ -74,18 +81,41 @@ class Health: ObservableObject {
             // 2. Always dispatch to the main thread when complete.
             DispatchQueue.main.async {
 
-                guard let samples = samples,
-                      let mostRecentSample = samples.first as? HKQuantitySample else {
-
-                    completion(.failure(error!)) // FIXME should force wrap here?
+                guard error == nil else {
+                    completion(.failure(error!))
+                    return
+                }
+                guard let samples = samples as? [T] else {
+                    completion(.failure(AppError.noSamples))
                     return
                 }
 
-                completion(.success(mostRecentSample))
+                completion(.success(samples))
             }
         }
 
         HKHealthStore().execute(sampleQuery)
+    }
+
+    private func loadMostRecentWorkouts() {
+
+//        guard let workoutSampleType = HKSampleType.quantityType(forIdentifier: .height) else {
+//            print("Height Sample Type is no longer available in HealthKit")
+//            return
+//        }
+
+        Self.getMostRecentSamples(for: HKSampleType.workoutType(), limit: 20) { (result: Result<[HKWorkout],Error>) in
+            switch result {
+            case .success(let samples):
+                print(samples)
+                self.workoutSamples = samples.map {
+                    WorkoutData(id: $0.uuid, date: $0.startDate, activityType: String(describing: $0.workoutActivityType), duration: $0.duration)
+                }
+            case .failure(let error):
+                print("Some error occurred: \(error.localizedDescription)")
+            }
+
+        }
     }
 
     private func loadMostRecentHeight() {
@@ -96,12 +126,11 @@ class Health: ObservableObject {
             return
         }
 
-        Self.getMostRecentSample(for: heightSampleType) { result in
+        Self.getMostRecentSample(for: heightSampleType) { (result: Result<[HKQuantitySample],Error>) in
             switch result {
-            case .success(let sample):
+            case .success(let samples):
                 print("Convert the height sample to meters, save to the profile model, and update the user interface.")
-                let heightInMeters = sample.quantity.doubleValue(for: HKUnit.meter())
-                self.heightInMeters = heightInMeters
+                self.heightInMeters = samples.first?.quantity.doubleValue(for: HKUnit.meter())
             case .failure(let error):
                 print("Some error occurred: \(error.localizedDescription)")
             }
@@ -116,11 +145,10 @@ class Health: ObservableObject {
             return
         }
 
-        Self.getMostRecentSample(for: weightSampleType) { result in
+        Self.getMostRecentSample(for: weightSampleType) { (result: Result<[HKQuantitySample],Error>) in
             switch result {
-            case .success(let sample):
-                let weightInKilograms = sample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-                self.weightInKilograms = weightInKilograms
+            case .success(let samples):
+                self.weightInKilograms = samples.first?.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
             case .failure(let error):
                 print("Some error occurred: \(error.localizedDescription)")
             }

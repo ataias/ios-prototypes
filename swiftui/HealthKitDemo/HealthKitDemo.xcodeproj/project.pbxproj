@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424DB14B259FA8090016DB7C /* WorkoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DB14A259FA8090016DB7C /* WorkoutRowView.swift */; };
+		424DB14E259FACA70016DB7C /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DB14D259FACA70016DB7C /* WorkoutsView.swift */; };
 		42805BED259E56480080E19F /* HealthKitDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805BEC259E56480080E19F /* HealthKitDemoApp.swift */; };
 		42805BEF259E56480080E19F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805BEE259E56480080E19F /* ContentView.swift */; };
 		42805BF1259E564B0080E19F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42805BF0259E564B0080E19F /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		424DB14A259FA8090016DB7C /* WorkoutRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRowView.swift; sourceTree = "<group>"; };
+		424DB14D259FACA70016DB7C /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		42805BE9259E56480080E19F /* HealthKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42805BEC259E56480080E19F /* HealthKitDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitDemoApp.swift; sourceTree = "<group>"; };
 		42805BEE259E56480080E19F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,7 +76,9 @@
 				42805BFC259E56560080E19F /* HealthKitDemo.entitlements */,
 				42805BEC259E56480080E19F /* HealthKitDemoApp.swift */,
 				42805BEE259E56480080E19F /* ContentView.swift */,
+				424DB14D259FACA70016DB7C /* WorkoutsView.swift */,
 				42A9D5A2259E63AC00AA4CCE /* DataRowView.swift */,
+				424DB14A259FA8090016DB7C /* WorkoutRowView.swift */,
 				42805BF0259E564B0080E19F /* Assets.xcassets */,
 				42805BF5259E564B0080E19F /* Info.plist */,
 				42805BF2259E564B0080E19F /* Preview Content */,
@@ -185,9 +191,11 @@
 			files = (
 				42805BEF259E56480080E19F /* ContentView.swift in Sources */,
 				42805C08259E5B170080E19F /* Health.swift in Sources */,
+				424DB14E259FACA70016DB7C /* WorkoutsView.swift in Sources */,
 				42805BED259E56480080E19F /* HealthKitDemoApp.swift in Sources */,
 				42805C0C259E5C210080E19F /* HKBiologicalSex+Extensions.swift in Sources */,
 				42805C02259E57A00080E19F /* HealthKitSetupAssistant.swift in Sources */,
+				424DB14B259FA8090016DB7C /* WorkoutRowView.swift in Sources */,
 				42805C10259E60980080E19F /* HKBloodType+Extensions.swift in Sources */,
 				42A9D5A3259E63AC00AA4CCE /* DataRowView.swift in Sources */,
 			);

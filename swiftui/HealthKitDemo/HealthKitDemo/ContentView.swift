@@ -14,6 +14,9 @@ struct ContentView: View {
 
     let weight: Double?
     let height: Double?
+
+    let workouts: [WorkoutData]
+
     var bmi: Double? {
         guard let weight = weight, let height = height else {
             return nil
@@ -52,6 +55,7 @@ struct ContentView: View {
                 DataRowView(title: "Height", value: formattedHeight)
                 DataRowView(title: "BMI", value: formattedBMI)
             }
+            WorkoutsView(workouts: workouts)
         }
     }
 }
@@ -63,7 +67,8 @@ struct ContentView_Previews: PreviewProvider {
             sex: "Female",
             bloodType: "A+",
             weight: 100.5,
-            height: 2.2
+            height: 2.2,
+            workouts: WorkoutsView_Previews.workoutData
         )
     }
 }

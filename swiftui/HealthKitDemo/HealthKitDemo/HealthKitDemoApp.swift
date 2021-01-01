@@ -12,7 +12,14 @@ struct HealthKitDemoApp: App {
     @ObservedObject var model = Health()
     var body: some Scene {
         WindowGroup {
-            ContentView(age: model.age, sex: model.biologicalSex, bloodType: model.bloodType, weight: model.weightInKilograms, height: model.heightInMeters)
+            ContentView(
+                age: model.age,
+                sex: model.biologicalSex,
+                bloodType: model.bloodType,
+                weight: model.weightInKilograms,
+                height: model.heightInMeters,
+                workouts: model.workoutSamples
+            )
                 .onAppear {
                     authorizeHealthkit() // TODO what if this failed? it will still call readHealthInfo afterwards. You could use combine to chain those
                     model.readHealthInfo()
