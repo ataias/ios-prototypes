@@ -21,14 +21,19 @@ struct WorkoutData: Identifiable {
 struct WorkoutRowView: View {
     let workoutData: WorkoutData
 
+    var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter.string(from: workoutData.date)
+    }
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 Text(workoutData.activityType).bold()
-                Text("\(workoutData.date)")
+                Text("\(formattedDate)")
             }
             Spacer()
-            Text("\(workoutData.duration)")
+            Text("\(workoutData.duration.prettyFormat)")
                 .foregroundColor(Color.gray)
         }
     }
