@@ -21,11 +21,10 @@ class Health: ObservableObject {
 
     public func readHealthInfo() {
         do {
-            let ageResult = Self.getAge(HKHealthStore())
-            let (biologicalSex, bloodType) = try Self.getSexAndBloodType()
-            self.age = String(try ageResult.get())
-            self.biologicalSex = String(describing: biologicalSex)
-            self.bloodType = String(describing: bloodType)
+            let store = HKHealthStore()
+            self.age = String(try Self.getAge(store).get()) // FIXME should treat each one separately?
+            self.biologicalSex = String(describing: try Self.getSex(store).get())
+            self.bloodType = String(describing: try Self.getBloodType(store).get())
 
             loadMostRecentHeight()
             loadMostRecentWeight()
@@ -46,23 +45,12 @@ class Health: ObservableObject {
             }
     }
 
-    static private func getSexAndBloodType() throws -> (biologicalSex: HKBiologicalSex,
-                                                        bloodType: HKBloodType) {
-        let healthKitStore = HKHealthStore()
+    static private func getSex(_ healthKitStore: HKHealthStore) -> Result<HKBiologicalSex,Error> {
+        return Result { try healthKitStore.biologicalSex().biologicalSex }
+    }
 
-        do {
-
-            // 1. This method throws an error if these data are not available.
-            // TODO: Can we use health kit with combine? This way we could get notified of changes in blood type and biological sex
-            let biologicalSex =       try healthKitStore.biologicalSex()
-            let bloodType =           try healthKitStore.bloodType()
-
-            // 3. Unwrap the wrappers to get the underlying enum values.
-            let unwrappedBiologicalSex = biologicalSex.biologicalSex
-            let unwrappedBloodType = bloodType.bloodType
-
-            return (unwrappedBiologicalSex, unwrappedBloodType)
-        }
+    static private func getBloodType(_ healthKitStore: HKHealthStore) -> Result<HKBloodType,Error> {
+        return Result { try healthKitStore.bloodType().bloodType }
     }
 
     static private func getMostRecentSample(for sampleType: HKSampleType,
