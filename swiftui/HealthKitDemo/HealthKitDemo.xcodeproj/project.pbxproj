@@ -18,6 +18,7 @@
 		42805C08259E5B170080E19F /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805C07259E5B170080E19F /* Health.swift */; };
 		42805C0C259E5C210080E19F /* HKBiologicalSex+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805C0B259E5C210080E19F /* HKBiologicalSex+Extensions.swift */; };
 		42805C10259E60980080E19F /* HKBloodType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42805C0F259E60980080E19F /* HKBloodType+Extensions.swift */; };
+		428509E9259FB1B0006F65CE /* HKWorkoutActivityType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428509E8259FB1AF006F65CE /* HKWorkoutActivityType+Extensions.swift */; };
 		42A9D5A3259E63AC00AA4CCE /* DataRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A9D5A2259E63AC00AA4CCE /* DataRowView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		42805C07259E5B170080E19F /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
 		42805C0B259E5C210080E19F /* HKBiologicalSex+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBiologicalSex+Extensions.swift"; sourceTree = "<group>"; };
 		42805C0F259E60980080E19F /* HKBloodType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBloodType+Extensions.swift"; sourceTree = "<group>"; };
+		428509E8259FB1AF006F65CE /* HKWorkoutActivityType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKWorkoutActivityType+Extensions.swift"; sourceTree = "<group>"; };
 		42A9D5A2259E63AC00AA4CCE /* DataRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 			children = (
 				42805C0B259E5C210080E19F /* HKBiologicalSex+Extensions.swift */,
 				42805C0F259E60980080E19F /* HKBloodType+Extensions.swift */,
+				428509E8259FB1AF006F65CE /* HKWorkoutActivityType+Extensions.swift */,
 			);
 			path = HealthKitExtensions;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				42805BEF259E56480080E19F /* ContentView.swift in Sources */,
 				42805C08259E5B170080E19F /* Health.swift in Sources */,
 				424DB14E259FACA70016DB7C /* WorkoutsView.swift in Sources */,
+				428509E9259FB1B0006F65CE /* HKWorkoutActivityType+Extensions.swift in Sources */,
 				42805BED259E56480080E19F /* HealthKitDemoApp.swift in Sources */,
 				42805C0C259E5C210080E19F /* HKBiologicalSex+Extensions.swift in Sources */,
 				42805C02259E57A00080E19F /* HealthKitSetupAssistant.swift in Sources */,
