@@ -66,7 +66,7 @@ class Health: ObservableObject {
     }
 
     static private func getMostRecentSample(for sampleType: HKSampleType,
-                                            completion: @escaping (HKQuantitySample?, Error?) -> Swift.Void) {
+                                            completion: @escaping (Result<HKQuantitySample, Error>) -> Void) {
 
         // 1. Use HKQuery to load the most recent samples.
         let mostRecentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast,
@@ -89,11 +89,11 @@ class Health: ObservableObject {
                 guard let samples = samples,
                       let mostRecentSample = samples.first as? HKQuantitySample else {
 
-                    completion(nil, error)
+                    completion(.failure(error!)) // FIXME should force wrap here?
                     return
                 }
 
-                completion(mostRecentSample, nil)
+                completion(.success(mostRecentSample))
             }
         }
 
@@ -108,15 +108,16 @@ class Health: ObservableObject {
             return
         }
 
-        Self.getMostRecentSample(for: heightSampleType) { (sample, error) in
-            guard let sample = sample else {
-                print("Some error occurred: \(error?.localizedDescription ?? "unknown")")
-                return
+        Self.getMostRecentSample(for: heightSampleType) { result in
+            switch result {
+            case .success(let sample):
+                print("Convert the height sample to meters, save to the profile model, and update the user interface.")
+                let heightInMeters = sample.quantity.doubleValue(for: HKUnit.meter())
+                self.heightInMeters = heightInMeters
+            case .failure(let error):
+                print("Some error occurred: \(error.localizedDescription)")
             }
 
-            // 2. Convert the height sample to meters, save to the profile model, and update the user interface.
-            let heightInMeters = sample.quantity.doubleValue(for: HKUnit.meter())
-            self.heightInMeters = heightInMeters
         }
     }
 
@@ -127,15 +128,14 @@ class Health: ObservableObject {
             return
         }
 
-        Self.getMostRecentSample(for: weightSampleType) { (sample, error) in
-
-            guard let sample = sample else {
-                print("Some error occurred: \(error?.localizedDescription ?? "unknown")")
-                return
+        Self.getMostRecentSample(for: weightSampleType) { result in
+            switch result {
+            case .success(let sample):
+                let weightInKilograms = sample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
+                self.weightInKilograms = weightInKilograms
+            case .failure(let error):
+                print("Some error occurred: \(error.localizedDescription)")
             }
-
-            let weightInKilograms = sample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-            self.weightInKilograms = weightInKilograms
         }
     }
 
