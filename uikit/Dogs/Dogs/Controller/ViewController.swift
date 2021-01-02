@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         cancellable = DogAPI.breedListPublisher()
             .receive(on: DispatchQueue.main)
             .sink { result in
@@ -33,9 +33,6 @@ class ViewController: UIViewController {
                 self.pickerViewDelegate = PickerViewDelegate(breeds: breeds) { uiImage in self.imageView.image = uiImage }
                 self.pickerView.delegate = self.pickerViewDelegate
             }
-
-
-
     }
 
 

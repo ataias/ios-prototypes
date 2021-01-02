@@ -10,10 +10,25 @@ import Combine
 import UIKit
 
 class DogAPI {
-    enum Endpoint: String, CaseIterable {
-        case randomImageFromAllDogsCollection = "https://dog.ceo/api/breeds/image/random"
-        case randomImageFromBreed = "https://dog.ceo/api/breed/{}/images/random"
-        case dogBreedList = "https://dog.ceo/api/breeds/list/all"
+    enum Endpoint {
+        case randomImageFromAllDogsCollection
+        case randomImageFromBreed(breed: String)
+        case dogBreedList
+
+        var url: URL {
+            URL(string: stringValue)!
+        }
+
+        var stringValue: String {
+            switch self {
+            case .randomImageFromAllDogsCollection:
+                return "https://dog.ceo/api/breeds/image/random"
+            case .randomImageFromBreed(let breed):
+                return "https://dog.ceo/api/breed/\(breed)/images/random"
+            case .dogBreedList:
+                return "https://dog.ceo/api/breeds/list/all"
+            }
+        }
     }
 
     struct Response: Codable {
@@ -37,7 +52,7 @@ class DogAPI {
 
 
     static func dogImagesPublisher(delayInSeconds: Double) -> AnyPublisher<UIImage?, Error> {
-        let url = URL(string: Self.Endpoint.randomImageFromAllDogsCollection.rawValue)!
+        let url = Self.Endpoint.randomImageFromAllDogsCollection.url
         let dogApiEndpoints = Timer
             .publish(every: delayInSeconds, on: .main, in: .common)
             .autoconnect()
@@ -58,8 +73,7 @@ class DogAPI {
     }
 
     static func dogImagePublisher(for breed: String) -> AnyPublisher<UIImage?, Error> {
-        let urlStr = Self.Endpoint.randomImageFromBreed.rawValue.replacingOccurrences(of: "{}", with: breed)
-        let url = URL(string: urlStr)! // FIXME
+        let url = Self.Endpoint.randomImageFromBreed(breed: breed).url
         return URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: DogAPI.Response.self, decoder: JSONDecoder())
@@ -71,12 +85,11 @@ class DogAPI {
     }
 
     static func breedListPublisher() -> AnyPublisher<[String], Error> {
-        let urlStr = Self.Endpoint.dogBreedList.rawValue
-        let url = URL(string: urlStr)!
+        let url = Self.Endpoint.dogBreedList.url
         return URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: DogAPI.ListBreedsResponse.self, decoder: JSONDecoder())
-            .map { $0.breeds }
+            .map { $0.breeds.sorted() }
             .eraseToAnyPublisher()
     }
 
