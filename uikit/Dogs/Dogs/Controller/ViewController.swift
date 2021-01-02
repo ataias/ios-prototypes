@@ -32,6 +32,7 @@ class ViewController: UIViewController {
             } receiveValue: { breeds in
                 self.pickerViewDelegate = PickerViewDelegate(breeds: breeds) { uiImage in self.imageView.image = uiImage }
                 self.pickerView.delegate = self.pickerViewDelegate
+                // pickerView.reloadAllComponents was not needed; probably because I just assign the delegate after creating it?
             }
     }
 
