@@ -12,10 +12,7 @@ import UIKit
 class DogAPI {
     enum Endpoint: String, CaseIterable {
         case randomImageFromAllDogsCollection = "https://dog.ceo/api/breeds/image/random"
-
-        var url: URL {
-            return URL(string: self.rawValue)!
-        }
+        case randomImageFromBreed = "https://dog.ceo/api/breed/{}/images/random"
     }
 
     struct Response: Codable {
@@ -39,10 +36,11 @@ class DogAPI {
 
 
     static func dogImagesPublisher(delayInSeconds: Double) -> AnyPublisher<UIImage?, Error> {
+        let url = URL(string: Self.Endpoint.randomImageFromAllDogsCollection.rawValue)!
         let dogApiEndpoints = Timer
             .publish(every: delayInSeconds, on: .main, in: .common)
             .autoconnect()
-            .map { _ in DogAPI.Endpoint.randomImageFromAllDogsCollection.url }
+            .map { _ in url }
 
         let dogUrls =
             dogApiEndpoints.flatMap { URLSession.shared.dataTaskPublisher(for: $0) }
@@ -52,6 +50,19 @@ class DogAPI {
 
         return
             dogUrls
+            .flatMap { (url:URL) in URLSession.shared.dataTaskPublisher(for: url).mapError { error -> URLError in return URLError(URLError.Code(rawValue: 404)) } }
+            .map { $0.data }
+            .map { UIImage(data: $0) }
+            .eraseToAnyPublisher()
+    }
+
+    static func dogImagePublisher(for breed: String) -> AnyPublisher<UIImage?, Error> {
+        let urlStr = Self.Endpoint.randomImageFromBreed.rawValue.replacingOccurrences(of: "{}", with: breed)
+        let url = URL(string: urlStr)! // FIXME
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: DogAPI.Response.self, decoder: JSONDecoder())
+            .compactMap { URL(string: $0.message) }
             .flatMap { (url:URL) in URLSession.shared.dataTaskPublisher(for: url).mapError { error -> URLError in return URLError(URLError.Code(rawValue: 404)) } }
             .map { $0.data }
             .map { UIImage(data: $0) }

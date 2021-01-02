@@ -12,22 +12,26 @@ import Foundation
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var pickerView: UIPickerView!
+
     private var cancellable: AnyCancellable?
+    private var pickerViewDelegate: PickerViewDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribeToDogImages()
-    }
 
-    func subscribeToDogImages() {
-        cancellable =
-            DogAPI.dogImagesPublisher(delayInSeconds: 1.5)
-            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: { error in print("Request failed: \(String(describing: error))" )},
-                receiveValue: { uiImage in
-                    self.imageView.image = uiImage
-                })
+        // FIXME this should come from the api!
+        let breeds = [
+            "affenpinscher",
+            "australian/shepherd",
+            "buhund/norwegian",
+            "bulldog/boston",
+            "bulldog/english",
+            "bulldog/french",
+            "cairn",
+        ]
+        pickerViewDelegate = PickerViewDelegate(breeds: breeds) { uiImage in self.imageView.image = uiImage }
+        pickerView.delegate = pickerViewDelegate
     }
 
 

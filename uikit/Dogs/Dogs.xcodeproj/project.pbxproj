@@ -15,6 +15,7 @@
 		42092F03259F25D600945455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42092F01259F25D600945455 /* LaunchScreen.storyboard */; };
 		42092F11259F279D00945455 /* DogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42092F10259F279D00945455 /* DogAPI.swift */; };
 		42092F87259F2AB800945455 /* DogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42092F86259F2AB800945455 /* DogsTests.swift */; };
+		4272E14325A09FEC003F76DF /* PickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4272E14225A09FEC003F76DF /* PickerViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		42092F86259F2AB800945455 /* DogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsTests.swift; sourceTree = "<group>"; };
 		42092F88259F2AB800945455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4262679725A081FF0039AAEB /* PrototypesPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PrototypesPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4272E14225A09FEC003F76DF /* PickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				42092EF6259F25D500945455 /* AppDelegate.swift */,
 				42092EF8259F25D500945455 /* SceneDelegate.swift */,
 				42092EFA259F25D500945455 /* ViewController.swift */,
+				4272E14225A09FEC003F76DF /* PickerViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			files = (
 				42092EFB259F25D500945455 /* ViewController.swift in Sources */,
 				42092EF7259F25D500945455 /* AppDelegate.swift in Sources */,
+				4272E14325A09FEC003F76DF /* PickerViewDelegate.swift in Sources */,
 				42092EF9259F25D500945455 /* SceneDelegate.swift in Sources */,
 				42092F11259F279D00945455 /* DogAPI.swift in Sources */,
 			);
