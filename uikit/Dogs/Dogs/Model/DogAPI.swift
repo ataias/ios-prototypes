@@ -13,6 +13,7 @@ class DogAPI {
     enum Endpoint: String, CaseIterable {
         case randomImageFromAllDogsCollection = "https://dog.ceo/api/breeds/image/random"
         case randomImageFromBreed = "https://dog.ceo/api/breed/{}/images/random"
+        case dogBreedList = "https://dog.ceo/api/breeds/list/all"
     }
 
     struct Response: Codable {
@@ -66,6 +67,16 @@ class DogAPI {
             .flatMap { (url:URL) in URLSession.shared.dataTaskPublisher(for: url).mapError { error -> URLError in return URLError(URLError.Code(rawValue: 404)) } }
             .map { $0.data }
             .map { UIImage(data: $0) }
+            .eraseToAnyPublisher()
+    }
+
+    static func breedListPublisher() -> AnyPublisher<[String], Error> {
+        let urlStr = Self.Endpoint.dogBreedList.rawValue
+        let url = URL(string: urlStr)!
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: DogAPI.ListBreedsResponse.self, decoder: JSONDecoder())
+            .map { $0.breeds }
             .eraseToAnyPublisher()
     }
 

@@ -17,6 +17,9 @@ class PickerViewDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataSource
     init(breeds: [String], setter: @escaping (UIImage?) -> Void) {
         self.breeds = breeds
         self.setter = setter
+
+        super.init()
+        fetchImage(for: breeds[0])
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -32,7 +35,11 @@ class PickerViewDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataSource
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        cancellable = DogAPI.dogImagePublisher(for: breeds[row])
+        fetchImage(for: breeds[row])
+    }
+
+    private func fetchImage(for breed: String) {
+        cancellable = DogAPI.dogImagePublisher(for: breed)
             .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { completion in

@@ -19,19 +19,23 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cancellable = DogAPI.breedListPublisher()
+            .receive(on: DispatchQueue.main)
+            .sink { result in
+                switch result {
+                case .failure(let error):
+                    print("Error occurred: \(error.localizedDescription)")
+                case .finished:
+                    print("Success")
+                }
+            } receiveValue: { breeds in
+                self.pickerViewDelegate = PickerViewDelegate(breeds: breeds) { uiImage in self.imageView.image = uiImage }
+                self.pickerView.delegate = self.pickerViewDelegate
+            }
 
-        // FIXME this should come from the api!
-        let breeds = [
-            "affenpinscher",
-            "australian/shepherd",
-            "buhund/norwegian",
-            "bulldog/boston",
-            "bulldog/english",
-            "bulldog/french",
-            "cairn",
-        ]
-        pickerViewDelegate = PickerViewDelegate(breeds: breeds) { uiImage in self.imageView.image = uiImage }
-        pickerView.delegate = pickerViewDelegate
+
+
     }
 
 
