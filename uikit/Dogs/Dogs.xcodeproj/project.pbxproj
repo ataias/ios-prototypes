@@ -40,6 +40,7 @@
 		42092F84259F2AB800945455 /* DogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42092F86259F2AB800945455 /* DogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsTests.swift; sourceTree = "<group>"; };
 		42092F88259F2AB800945455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4262679725A081FF0039AAEB /* PrototypesPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PrototypesPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 				42092F0D259F266000945455 /* Controller */,
 				42092F0B259F263000945455 /* View */,
 				42092F04259F25D600945455 /* Info.plist */,
+				4262679725A081FF0039AAEB /* PrototypesPlayground.playground */,
 			);
 			path = Dogs;
 			sourceTree = "<group>";

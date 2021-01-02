@@ -24,6 +24,45 @@ class DogsTests: XCTestCase {
         }
     }
 
+    func testBreedStringListGenerator() throws {
+        let jsonData = """
+            {
+                "message": {
+                    "affenpinscher": [],
+                    "australian": [
+                        "shepherd"
+                    ],
+                    "buhund": [
+                        "norwegian"
+                    ],
+                    "bulldog": [
+                        "boston",
+                        "english",
+                        "french"
+                    ],
+                    "cairn": [],
+                },
+                "status": "success"
+            }
+        """.data(using: .utf8)!
+
+        let listBreedsResponse = try JSONDecoder().decode(DogAPI.ListBreedsResponse.self, from: jsonData)
+        let breeds = listBreedsResponse.breeds.sorted()
+        let expected = [
+            "affenpinscher",
+            "australian/shepherd",
+            "buhund/norwegian",
+            "bulldog/boston",
+            "bulldog/english",
+            "bulldog/french",
+            "cairn",
+        ]
+        XCTAssertEqual(breeds.count, expected.count)
+        for (breed, expected) in zip(breeds, expected) {
+            XCTAssertEqual(breed, expected)
+        }
+    }
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {

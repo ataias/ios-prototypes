@@ -23,6 +23,21 @@ class DogAPI {
         let status: String
     }
 
+    struct ListBreedsResponse: Codable {
+        let message: [String: [String]]
+        let status: String
+
+        var breeds: [String] {
+            message.flatMap { (breed, subBreeds) -> [String] in
+                if subBreeds.count == 0 {
+                    return [breed]
+                }
+                return subBreeds.map { "\(breed)/\($0)" }
+            }
+        }
+    }
+
+
     static func dogImagesPublisher(delayInSeconds: Double) -> AnyPublisher<UIImage?, Error> {
         let dogApiEndpoints = Timer
             .publish(every: delayInSeconds, on: .main, in: .common)
