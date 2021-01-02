@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 import Foundation
+import os
 
 class ViewController: UIViewController {
 
@@ -17,6 +18,8 @@ class ViewController: UIViewController {
     private var cancellable: AnyCancellable?
     private var pickerViewDelegate: PickerViewDelegate!
 
+    let defaultLog = Logger()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,9 +28,9 @@ class ViewController: UIViewController {
             .sink { result in
                 switch result {
                 case .failure(let error):
-                    print("Error occurred: \(error.localizedDescription)")
+                    self.defaultLog.error("Error occurred: \(error.localizedDescription)")
                 case .finished:
-                    print("Success")
+                    self.defaultLog.info("Success")
                 }
             } receiveValue: { breeds in
                 self.pickerViewDelegate = PickerViewDelegate(breeds: breeds) { uiImage in self.imageView.image = uiImage }

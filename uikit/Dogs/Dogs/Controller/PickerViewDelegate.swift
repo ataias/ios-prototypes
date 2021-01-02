@@ -7,12 +7,14 @@
 
 import UIKit
 import Combine
+import os
 
 class PickerViewDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
 
     let breeds: [String]
     let setter: (UIImage?) -> Void
     var cancellable: AnyCancellable?
+    let defaultLog = Logger()
 
     init(breeds: [String], setter: @escaping (UIImage?) -> Void) {
         self.breeds = breeds
@@ -45,9 +47,9 @@ class PickerViewDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataSource
                 receiveCompletion: { completion in
                     switch completion {
                     case .failure(let error):
-                        print("Request failed: \(String(describing: error))" )
+                        self.defaultLog.error("Request failed: \(String(describing: error))" )
                     case .finished:
-                        print("Success")
+                        self.defaultLog.info("Success")
                     }
                 },
                 receiveValue: { uiImage in
