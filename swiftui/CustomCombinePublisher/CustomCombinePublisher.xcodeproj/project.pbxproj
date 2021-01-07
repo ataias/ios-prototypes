@@ -13,6 +13,8 @@
 		42B81DDF25A7327200EB1C3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B81DDE25A7327200EB1C3B /* Preview Assets.xcassets */; };
 		42B81DEA25A7327300EB1C3B /* CustomCombinePublisherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B81DE925A7327300EB1C3B /* CustomCombinePublisherTests.swift */; };
 		42B81DF525A7327300EB1C3B /* CustomCombinePublisherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B81DF425A7327300EB1C3B /* CustomCombinePublisherUITests.swift */; };
+		42B81E0625A732A000EB1C3B /* Publishers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B81E0525A732A000EB1C3B /* Publishers+Extensions.swift */; };
+		42B81E0B25A7342600EB1C3B /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B81E0A25A7342600EB1C3B /* URLSession+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		42B81DF025A7327300EB1C3B /* CustomCombinePublisherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomCombinePublisherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B81DF425A7327300EB1C3B /* CustomCombinePublisherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCombinePublisherUITests.swift; sourceTree = "<group>"; };
 		42B81DF625A7327300EB1C3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42B81E0525A732A000EB1C3B /* Publishers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+Extensions.swift"; sourceTree = "<group>"; };
+		42B81E0A25A7342600EB1C3B /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				42B81DDB25A7327200EB1C3B /* Assets.xcassets */,
 				42B81DE025A7327200EB1C3B /* Info.plist */,
 				42B81DDD25A7327200EB1C3B /* Preview Content */,
+				42B81E0525A732A000EB1C3B /* Publishers+Extensions.swift */,
+				42B81E0A25A7342600EB1C3B /* URLSession+Extensions.swift */,
 			);
 			path = CustomCombinePublisher;
 			sourceTree = "<group>";
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B81E0B25A7342600EB1C3B /* URLSession+Extensions.swift in Sources */,
 				42B81DDA25A7327100EB1C3B /* ContentView.swift in Sources */,
 				42B81DD825A7327100EB1C3B /* CustomCombinePublisherApp.swift in Sources */,
+				42B81E0625A732A000EB1C3B /* Publishers+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
