@@ -8,11 +8,23 @@
 import Foundation
 
 class MyClass {
-    func methodOne() {
-        print(#function)
+    private static var allInstances = 0
+    private let instance: Int
+
+    init() {
+        MyClass.allInstances += 1
+        instance = MyClass.allInstances
+        print(">> \(#function) #\(instance)")
+    }
+
+    deinit {
+        print(">> \(#function) \(instance)")
+    }
+    public func methodOne() {
+        print(">> \(#function)")
     }
 
     func methodTwo() {
-        print(#function)
+        print(">> \(#function)")
     }
 }
