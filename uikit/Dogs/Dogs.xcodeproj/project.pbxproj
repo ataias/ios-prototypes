@@ -14,7 +14,7 @@
 		42092F00259F25D600945455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42092EFF259F25D600945455 /* Assets.xcassets */; };
 		42092F03259F25D600945455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42092F01259F25D600945455 /* LaunchScreen.storyboard */; };
 		42092F11259F279D00945455 /* DogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42092F10259F279D00945455 /* DogAPI.swift */; };
-		42092F87259F2AB800945455 /* DogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42092F86259F2AB800945455 /* DogsTests.swift */; };
+		42092F87259F2AB800945455 /* DogsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42092F86259F2AB800945455 /* DogsAPITests.swift */; };
 		4272E14325A09FEC003F76DF /* PickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4272E14225A09FEC003F76DF /* PickerViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,7 @@
 		42092F04259F25D600945455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42092F10259F279D00945455 /* DogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPI.swift; sourceTree = "<group>"; };
 		42092F84259F2AB800945455 /* DogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42092F86259F2AB800945455 /* DogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsTests.swift; sourceTree = "<group>"; };
+		42092F86259F2AB800945455 /* DogsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsAPITests.swift; sourceTree = "<group>"; };
 		42092F88259F2AB800945455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4262679725A081FF0039AAEB /* PrototypesPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PrototypesPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4272E14225A09FEC003F76DF /* PickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewDelegate.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		42092F85259F2AB800945455 /* DogsTests */ = {
 			isa = PBXGroup;
 			children = (
-				42092F86259F2AB800945455 /* DogsTests.swift */,
+				42092F86259F2AB800945455 /* DogsAPITests.swift */,
 				42092F88259F2AB800945455 /* Info.plist */,
 			);
 			path = DogsTests;
@@ -243,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42092F87259F2AB800945455 /* DogsTests.swift in Sources */,
+				42092F87259F2AB800945455 /* DogsAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

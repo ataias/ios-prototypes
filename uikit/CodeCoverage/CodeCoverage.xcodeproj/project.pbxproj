@@ -13,8 +13,9 @@
 		4224472C25A88375003F45ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224472A25A88375003F45ED /* Main.storyboard */; };
 		4224472E25A88376003F45ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4224472D25A88376003F45ED /* Assets.xcassets */; };
 		4224473125A88376003F45ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224472F25A88376003F45ED /* LaunchScreen.storyboard */; };
-		4224473C25A88377003F45ED /* CodeCoverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224473B25A88377003F45ED /* CodeCoverageTests.swift */; };
-		4224474725A88377003F45ED /* CodeCoverageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224474625A88377003F45ED /* CodeCoverageUITests.swift */; };
+		4224475825A883BB003F45ED /* CoveredClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224475725A883BB003F45ED /* CoveredClass.swift */; };
+		4224476025A88416003F45ED /* CoveredClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224475F25A88416003F45ED /* CoveredClassTests.swift */; };
+		4224476B25A88498003F45ED /* CodeCoverageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224476A25A88498003F45ED /* CodeCoverageUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +45,12 @@
 		4224473025A88376003F45ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4224473225A88376003F45ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4224473725A88377003F45ED /* CodeCoverageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4224473B25A88377003F45ED /* CodeCoverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCoverageTests.swift; sourceTree = "<group>"; };
 		4224473D25A88377003F45ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4224474225A88377003F45ED /* CodeCoverageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4224474625A88377003F45ED /* CodeCoverageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCoverageUITests.swift; sourceTree = "<group>"; };
 		4224474825A88377003F45ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4224475725A883BB003F45ED /* CoveredClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredClass.swift; sourceTree = "<group>"; };
+		4224475F25A88416003F45ED /* CoveredClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredClassTests.swift; sourceTree = "<group>"; };
+		4224476A25A88498003F45ED /* CodeCoverageUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeCoverageUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				4224472D25A88376003F45ED /* Assets.xcassets */,
 				4224472F25A88376003F45ED /* LaunchScreen.storyboard */,
 				4224473225A88376003F45ED /* Info.plist */,
+				4224475725A883BB003F45ED /* CoveredClass.swift */,
 			);
 			path = CodeCoverage;
 			sourceTree = "<group>";
@@ -113,8 +116,8 @@
 		4224473A25A88377003F45ED /* CodeCoverageTests */ = {
 			isa = PBXGroup;
 			children = (
-				4224473B25A88377003F45ED /* CodeCoverageTests.swift */,
 				4224473D25A88377003F45ED /* Info.plist */,
+				4224475F25A88416003F45ED /* CoveredClassTests.swift */,
 			);
 			path = CodeCoverageTests;
 			sourceTree = "<group>";
@@ -122,7 +125,7 @@
 		4224474525A88377003F45ED /* CodeCoverageUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4224474625A88377003F45ED /* CodeCoverageUITests.swift */,
+				4224476A25A88498003F45ED /* CodeCoverageUITests.swift */,
 				4224474825A88377003F45ED /* Info.plist */,
 			);
 			path = CodeCoverageUITests;
@@ -202,6 +205,7 @@
 					};
 					4224474125A88377003F45ED = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 						TestTargetID = 4224472025A88375003F45ED;
 					};
 				};
@@ -261,6 +265,7 @@
 				4224472925A88375003F45ED /* ViewController.swift in Sources */,
 				4224472525A88375003F45ED /* AppDelegate.swift in Sources */,
 				4224472725A88375003F45ED /* SceneDelegate.swift in Sources */,
+				4224475825A883BB003F45ED /* CoveredClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4224473C25A88377003F45ED /* CodeCoverageTests.swift in Sources */,
+				4224476025A88416003F45ED /* CoveredClassTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4224474725A88377003F45ED /* CodeCoverageUITests.swift in Sources */,
+				4224476B25A88498003F45ED /* CodeCoverageUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8XPT9US388;
 				INFOPLIST_FILE = CodeCoverageUITests/Info.plist;
@@ -527,6 +533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.ataias.CodeCoverageUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CodeCoverage;
@@ -537,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8XPT9US388;
 				INFOPLIST_FILE = CodeCoverageUITests/Info.plist;

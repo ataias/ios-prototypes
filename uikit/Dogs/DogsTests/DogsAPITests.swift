@@ -18,10 +18,16 @@ class DogsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testURLDoesNotThrow() throws {
-        for endpoint in DogAPI.Endpoint.allCases {
-            XCTAssertNoThrow(endpoint.url)
-        }
+    func test_Endpoint_dogBreedListDoesNoThrow() throws {
+        XCTAssertNoThrow(DogAPI.Endpoint.dogBreedList)
+    }
+
+    func test_Endpoint_randomImageFromAllDogsCollectionDoesNoThrow() throws {
+        XCTAssertNoThrow(DogAPI.Endpoint.randomImageFromAllDogsCollection)
+    }
+
+    func test_Endpoint_something() throws {
+        XCTAssertNoThrow(DogAPI.Endpoint.randomImageFromBreed(breed: "chichi"))
     }
 
     func testBreedStringListGenerator() throws {
