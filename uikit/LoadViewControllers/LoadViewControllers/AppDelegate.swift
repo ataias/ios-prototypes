@@ -1,19 +1,19 @@
 //
 //  AppDelegate.swift
-//  AppLaunch
+//  LoadViewControllers
 //
-//  Created by Ataias Pereira Reis on 08/01/21.
+//  Created by Ataias Pereira Reis on 10/01/21.
 //
 
 import UIKit
 
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        print(">> Launching with real app delegate")
         return true
     }
 

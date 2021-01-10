@@ -15,6 +15,8 @@
 		42EAD30525A90FC90029ABB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EAD30325A90FC90029ABB5 /* LaunchScreen.storyboard */; };
 		42EAD31025A90FC90029ABB5 /* AppLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAD30F25A90FC90029ABB5 /* AppLaunchTests.swift */; };
 		42EAD31B25A90FC90029ABB5 /* AppLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAD31A25A90FC90029ABB5 /* AppLaunchUITests.swift */; };
+		42EAD32C25A912120029ABB5 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAD32B25A912120029ABB5 /* TestingAppDelegate.swift */; };
+		42EAD33125A912DA0029ABB5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAD33025A912DA0029ABB5 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		42EAD31625A90FC90029ABB5 /* AppLaunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppLaunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EAD31A25A90FC90029ABB5 /* AppLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchUITests.swift; sourceTree = "<group>"; };
 		42EAD31C25A90FC90029ABB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42EAD32B25A912120029ABB5 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		42EAD33025A912DA0029ABB5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				42EAD30125A90FC90029ABB5 /* Assets.xcassets */,
 				42EAD30325A90FC90029ABB5 /* LaunchScreen.storyboard */,
 				42EAD30625A90FC90029ABB5 /* Info.plist */,
+				42EAD33025A912DA0029ABB5 /* main.swift */,
 			);
 			path = AppLaunch;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				42EAD30F25A90FC90029ABB5 /* AppLaunchTests.swift */,
 				42EAD31125A90FC90029ABB5 /* Info.plist */,
+				42EAD32B25A912120029ABB5 /* TestingAppDelegate.swift */,
 			);
 			path = AppLaunchTests;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			files = (
 				42EAD2FD25A90FC80029ABB5 /* ViewController.swift in Sources */,
 				42EAD2F925A90FC80029ABB5 /* AppDelegate.swift in Sources */,
+				42EAD33125A912DA0029ABB5 /* main.swift in Sources */,
 				42EAD2FB25A90FC80029ABB5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42EAD31025A90FC90029ABB5 /* AppLaunchTests.swift in Sources */,
+				42EAD32C25A912120029ABB5 /* TestingAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
