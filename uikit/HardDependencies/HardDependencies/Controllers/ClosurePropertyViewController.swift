@@ -9,7 +9,8 @@ import UIKit
 
 class ClosurePropertyViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.shared.track(event: "\(#function) - \(type(of: self))")
     }
 }
